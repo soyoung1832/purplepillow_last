@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vmn-FX-vqc">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="t8G-1k-dM4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="dBF-XK-4Kv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vHe-gd-cED"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fs-VN-TjT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="-293"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zs4-IR-C3X">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vmn-FX-vqc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m3K-Xw-e78">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.34509803919999998" green="0.01176470588" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dBF-XK-4Kv" kind="relationship" relationship="viewControllers" id="1T6-OJ-LCd"/>
+                        <segue destination="OxK-sy-fAV" kind="relationship" relationship="viewControllers" id="K60-hD-Hae"/>
+                        <segue destination="PTx-Z6-n0c" kind="relationship" relationship="viewControllers" id="meR-bi-S67"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMM-an-E3h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
+        </scene>
+        <!--Mypage-->
+        <scene sceneID="pmj-EY-l7g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mypage" id="PTx-Z6-n0c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="NxR-Um-B4e"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FUa-EE-EzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-2"/>
+        </scene>
+        <!--Studio-->
+        <scene sceneID="Tjh-H3-oWa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Studio" id="OxK-sy-fAV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fuQ-CF-INw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olQ-zI-6Yx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="232"/>
+        </scene>
+    </scenes>
+</document>
