@@ -22,19 +22,12 @@ class TitleViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        let myCustomViewCellNib = UINib(nibName: String(describing: MyCustomViewCell.self), bundle: nil)
-        self.collectionView.register(myCustomViewCellNib, forCellWithReuseIdentifier: String(describing: MyCustomViewCell.self))
-
-        self.collectionView.collectionViewLayout = createCompositionalLayout()
-
         // 임시로 데이터 생성하여 추가
         let post1 = Post(image: UIImage(systemName: "house")!, text: "첫 번째 게시글 내용", timestamp: "2023-08-09")
         let post2 = Post(image: UIImage(systemName: "sparkle")!, text: "두 번째 게시글 내용", timestamp: "2023-08-10")
         let post3 = Post(image: UIImage(systemName: "moon")!, text: "세 번째 게시글 내용", timestamp: "2023-08-11")
 
         posts = [post1, post2, post3]
-        
-
     }
 }
 
@@ -67,28 +60,25 @@ extension TitleViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCustomViewCell.self), for: indexPath) as! MyCustomViewCell
-        cell.profileImg.image = self.posts[indexPath.item].image
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCustomViewCell", for: indexPath)
 
-        // Set the closure to handle cell tap
-        cell.didSelectCell = { [weak self] in
-            let selectedPost = self?.posts[indexPath.item]
-            self?.performSegue(withIdentifier: "DetailSegue", sender: selectedPost)
+        if let imageView = cell.viewWithTag(1) as? UIImageView {
+            imageView.image = self.posts[indexPath.item].image
         }
 
         return cell
     }
 }
 
-
 extension TitleViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedPost = posts[indexPath.item]
         performSegue(withIdentifier: "DetailSegue", sender: selectedPost)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailSegue" {
+        if let id = segue.identifier, "DetailSegue" == id {
             if let detailVC = segue.destination as? DetailViewController,
                let selectedPost = sender as? Post {
                 detailVC.post = selectedPost

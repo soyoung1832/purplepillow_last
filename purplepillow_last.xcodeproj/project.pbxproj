@@ -37,8 +37,6 @@
 		8DDF6CCA2A865279008789C0 /* Group 863.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDF6CC92A865279008789C0 /* Group 863.png */; };
 		8DDF6CCC2A870D6B008789C0 /* default_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDF6CCB2A870D6B008789C0 /* default_profile.png */; };
 		8DDF6CCE2A871002008789C0 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDF6CCD2A871002008789C0 /* RoundImageView.swift */; };
-		8DE493E72A92D6A4004BB4E1 /* MyCustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE493E62A92D6A4004BB4E1 /* MyCustomViewCell.xib */; };
-		8DE493E92A92D80F004BB4E1 /* MyCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE493E82A92D80F004BB4E1 /* MyCustomViewCell.swift */; };
 		8DEE9CBD2A8A1F1E00309578 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE9CBC2A8A1F1E00309578 /* Post.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +102,6 @@
 		8DDF6CC92A865279008789C0 /* Group 863.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group 863.png"; sourceTree = "<group>"; };
 		8DDF6CCB2A870D6B008789C0 /* default_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_profile.png; sourceTree = "<group>"; };
 		8DDF6CCD2A871002008789C0 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
-		8DE493E62A92D6A4004BB4E1 /* MyCustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCustomViewCell.xib; sourceTree = "<group>"; };
-		8DE493E82A92D80F004BB4E1 /* MyCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewCell.swift; sourceTree = "<group>"; };
 		8DEE9CBC2A8A1F1E00309578 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +146,6 @@
 				8D0BD0C72A83860E00156C26 /* PasswordViewController.swift */,
 				8D3C27672A83F26500FE6856 /* VertifyViewController.swift */,
 				8DDF6CC72A865190008789C0 /* TitleViewController.swift */,
-				8DE493E62A92D6A4004BB4E1 /* MyCustomViewCell.xib */,
-				8DE493E82A92D80F004BB4E1 /* MyCustomViewCell.swift */,
 				8DEE9CBC2A8A1F1E00309578 /* Post.swift */,
 				8D0AEC652A8AF162000001CA /* DetailViewController.swift */,
 			);
@@ -364,7 +358,6 @@
 				8DB518272A821E5C0045B24B /* Assets.xcassets in Resources */,
 				8D8CBFC22A8641B300FA9EF0 /* Home.storyboard in Resources */,
 				8DB518252A821E5A0045B24B /* Register.storyboard in Resources */,
-				8DE493E72A92D6A4004BB4E1 /* MyCustomViewCell.xib in Resources */,
 				8D8CBFBC2A862BC000FA9EF0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +389,6 @@
 				8D0BD0C62A8385F200156C26 /* EmailViewController.swift in Sources */,
 				8D0BD0BA2A83809A00156C26 /* SignUpViewController.swift in Sources */,
 				8DDF6CCE2A871002008789C0 /* RoundImageView.swift in Sources */,
-				8DE493E92A92D80F004BB4E1 /* MyCustomViewCell.swift in Sources */,
 				8D0AEC662A8AF162000001CA /* DetailViewController.swift in Sources */,
 				8D0BD0BC2A8380CB00156C26 /* LoginViewController.swift in Sources */,
 				8DDF6CC82A865190008789C0 /* TitleViewController.swift in Sources */,

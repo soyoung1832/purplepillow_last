@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 struct Post {
-    let image: UIImage
-    let text: String
-    let timestamp: String
+    var image: UIImage?
+    var text: String?
+    var timestamp: String?
 }
 
