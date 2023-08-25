@@ -271,7 +271,7 @@
         <!--Profile-->
         <scene sceneID="1bU-g9-i5W">
             <objects>
-                <viewController id="0xq-2R-rF9" sceneMemberID="viewController">
+                <viewController id="0xq-2R-rF9" customClass="ProfileViewController" customModule="purplepillow_last" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="84Y-6J-O4I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,6 +293,9 @@
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="baseForegroundColor" red="0.3803921569" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="editButtonTapped:" destination="0xq-2R-rF9" eventType="touchUpInside" id="Scw-Tb-dbj"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Pmz-PC-mwC">
                                         <rect key="frame" x="0.0" y="169.66666666666669" width="353" height="80"/>
@@ -359,8 +362,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="mxN-bH-Xix">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="PSU-M2-jfq"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="PSU-M2-jfq">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="0xq-2R-rF9" id="ikc-5I-LCd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="BioTextField" destination="DHL-sG-Hgj" id="kYz-gy-Mgx"/>
+                        <outlet property="NameTextField" destination="QY1-Zy-nHZ" id="6qo-Wm-d0U"/>
+                        <outlet property="editButton" destination="hvT-9K-DxK" id="UzG-Lg-JGj"/>
+                        <outlet property="profileImg" destination="Mx0-4r-zQw" id="bak-at-Ijn"/>
+                        <outlet property="saveButton" destination="PSU-M2-jfq" id="Puu-zg-7ye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WS8-ZK-a4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" id="JrP-oY-VaE">

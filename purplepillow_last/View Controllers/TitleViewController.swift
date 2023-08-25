@@ -1,4 +1,7 @@
 import UIKit
+import Firebase
+import FirebaseStorage
+import FirebaseFirestore
 
 class TitleViewController: UIViewController {
 
@@ -8,6 +11,11 @@ class TitleViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     fileprivate var posts: [Post] = []
+    fileprivate var currentUserProfile: UserProfile?
+    var db: Firestore!
+    var auth: Auth!
+    var storage: Storage!
+    var userProfileListener: ListenerRegistration?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,37 +30,68 @@ class TitleViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        // 임시로 데이터 생성하여 추가
         let post1 = Post(image: UIImage(systemName: "house")!, text: "첫 번째 게시글 내용", timestamp: "2023-08-09")
         let post2 = Post(image: UIImage(systemName: "sparkle")!, text: "두 번째 게시글 내용", timestamp: "2023-08-10")
         let post3 = Post(image: UIImage(systemName: "moon")!, text: "세 번째 게시글 내용", timestamp: "2023-08-11")
 
         posts = [post1, post2, post3]
+
+        db = Firestore.firestore()
+        auth = Auth.auth()
+        storage = Storage.storage()
+
+        loadCurrentUserProfile()
     }
-}
 
-extension TitleViewController {
+    func loadCurrentUserProfile() {
+        if let uid = auth.currentUser?.uid {
+            let userProfileRef = db.collection("userProfiles").document(uid)
+            userProfileListener = userProfileRef.addSnapshotListener { documentSnapshot, error in
+                if let document = documentSnapshot, document.exists {
+                    let data = document.data()
+                    if let unwrappedData = data {
+                        let userProfile = UserProfile(data: unwrappedData)
+                        self.currentUserProfile = userProfile
+                        self.updateUI()
 
-    fileprivate func createCompositionalLayout() -> UICollectionViewLayout {
-        
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+                        if let imageUrl = userProfile.imageUrl, let url = URL(string: imageUrl) {
+                            URLSession.shared.dataTask(with: url) { data, response, error in
+                                if let error = error {
+                                    print("Error downloading profile image: \(error)")
+                                    return
+                                }
 
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16) // Add spacing to the right of each item
-
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.5))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-            group.interItemSpacing = .fixed(16) // Set interItemSpacing to 16
-
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
-            return section
+                                if let data = data, let image = UIImage(data: data) {
+                                    DispatchQueue.main.async {
+                                        self.ProfileImageView.image = image
+                                    }
+                                }
+                            }.resume()
+                        }
+                    } else {
+                        print("User profile data is nil")
+                    }
+                } else {
+                    print("User profile document does not exist")
+                }
+            }
         }
-        return layout
+    }
 
+    func updateUI() {
+        if let currentUserProfile = currentUserProfile {
+            UsernameTextField.text = currentUserProfile.username
+            BioTextField.text = currentUserProfile.bio
+        }
+    }
+    
+    deinit {
+        userProfileListener?.remove()
     }
 }
+
+
+// CollectionView data source and delegate extensions
 
 extension TitleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,5 +125,3 @@ extension TitleViewController: UICollectionViewDelegate {
         }
     }
 }
-
-
