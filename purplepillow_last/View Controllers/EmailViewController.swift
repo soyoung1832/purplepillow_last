@@ -2,7 +2,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class EmailViewController: UIViewController {
+class EmailViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField2: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -12,7 +12,9 @@ class EmailViewController: UIViewController {
     @IBOutlet weak var emailStatusLabel: UILabel!
     @IBOutlet weak var passwordStatusLabel: UILabel!
     @IBOutlet weak var passwordConfirmStatusLabel: UILabel!
+    var doneButtonOriginalY: CGFloat = 0.0
     
+    @IBOutlet weak var donebarbutton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +31,71 @@ class EmailViewController: UIViewController {
         emailStatusLabel.isHidden = true
         passwordStatusLabel.isHidden = true
         passwordConfirmStatusLabel.isHidden = true
+        
+        emailTextField.delegate = self
+        emailTextField2.delegate = self
+        passwordTextField.delegate = self
+        passwordConfirmTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
+        
     }
     
+    @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+            // 텍스트 필드의 키보드를 숨김
+            self.view.endEditing(true)
+        }
+    
+    func showCompletionAlert() {
+            let alert = UIAlertController(title: "회원가입 완료", message: "회원가입이 성공적으로 완료되었습니다.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "확인", style: .default) { _ in
+                // 확인 버튼을 누르면 창이 사라지도록 설정
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
+        }
+    
+    
     @objc func TFdidChanged(_ sender: UITextField) {
-        // ... (이전 코드)
+        print("텍스트 변경 감지")
+        print("text :", sender.text)
+        
+        // 4개 텍스트 필드가 채워졌는지, 비밀번호가 일치하고 조건을 충족하는지 확인.
+        let isAllFieldsFilled = !(emailTextField.text?.isEmpty ?? true)
+        && !(emailTextField2.text?.isEmpty ?? true)
+        && !(passwordTextField.text?.isEmpty ?? true)
+        && !(passwordConfirmTextField.text?.isEmpty ?? true)
+        
+        if isAllFieldsFilled && isValidPassword(passwordTextField.text ?? "") {
+            updateNextButton(willActive: true)
+        } else {
+            updateNextButton(willActive: false)
+        }
+        
+        if sender == emailTextField || sender == emailTextField2 {
+            let fullEmail = (emailTextField.text ?? "") + "@" + (emailTextField2.text ?? "")
+            let isValid = isValidEmail(fullEmail)
+            emailStatusLabel.isHidden = isValid
+            emailStatusLabel.text = isValid ? "유효한 이메일입니다." : "올바른 이메일 형식을 입력하세요."
+        }
+        
+        if sender == passwordTextField {
+            let password = (passwordTextField.text ?? "")
+            
+            let isValid = isValidPassword(password)
+            passwordStatusLabel.isHidden = isValid
+            passwordStatusLabel.text = isValid ? "유효한 비밀번호입니다." : "영문,숫자,특수문자 조합 8자리 이상 입력하세요."
+        }
+        
+        
+        if sender == passwordConfirmTextField {
+            let passwordsMatch = passwordTextField.text == passwordConfirmTextField.text
+            passwordConfirmStatusLabel.isHidden = passwordsMatch
+            passwordConfirmStatusLabel.text = passwordsMatch ? "비밀번호가 일치합니다." : "비밀번호가 일치하지 않습니다."
+        }
     }
     
     func updateNextButton(willActive: Bool) {
@@ -45,7 +108,13 @@ class EmailViewController: UIViewController {
         }
     }
     
-    @IBAction func doneButton(_ sender: UIButton) {
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+            // 회원가입 로직 완료 후, 메시지 창을 띄워주는 함수 호출
+            showCompletionAlert()
+        }
+
+    @IBAction func doneButton(_ sender: UIBarButtonItem) {
         guard let email = emailTextField.text,
               let email2 = emailTextField2.text,
               let password = passwordTextField.text,
@@ -58,7 +127,7 @@ class EmailViewController: UIViewController {
                 if let error = error {
                     print("회원가입에 실패하였습니다. Error: \(error.localizedDescription)")
                 } else {
-                    print("회원가입에 성공하였습니다.")
+                    print( "회원가입에 성공하였습니다.") // 스낵바 띄우기
                     
                     Auth.auth().signIn(withEmail: fullEmail, password: password) { firebaseResult, error in
                         if let error = error {
@@ -99,6 +168,8 @@ class EmailViewController: UIViewController {
                 }
             }
         }
+        
+        
     }
     
     func isValidEmail(_ fullEmail: String) -> Bool {

@@ -20,6 +20,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        profileImg.layer.cornerRadius = profileImg.frame.height / 2
+        profileImg.layer.borderWidth = 1
+        profileImg.clipsToBounds = true
+        profileImg.layer.borderColor = UIColor.blue.cgColor
+
+        
         db = Firestore.firestore()
         auth = Auth.auth()
         storage = Storage.storage()

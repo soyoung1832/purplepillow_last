@@ -8,6 +8,7 @@ class TitleViewController: UIViewController {
     @IBOutlet weak var ProfileImageView: UIImageView!
     @IBOutlet weak var UsernameTextField: UILabel!
     @IBOutlet weak var BioTextField: UILabel!
+    @IBOutlet weak var studionum: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
 
     fileprivate var posts: [Post] = []
@@ -27,20 +28,30 @@ class TitleViewController: UIViewController {
 
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
+       
+        
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        let post1 = Post(image: UIImage(systemName: "house")!, text: "첫 번째 게시글 내용", timestamp: "2023-08-09")
-        let post2 = Post(image: UIImage(systemName: "sparkle")!, text: "두 번째 게시글 내용", timestamp: "2023-08-10")
-        let post3 = Post(image: UIImage(systemName: "moon")!, text: "세 번째 게시글 내용", timestamp: "2023-08-11")
+        let post1 = Post(image: UIImage(named: "Group863"), text: "첫 번째 게시글 내용", timestamp: "2023-08-09")
+        let post2 = Post(image: UIImage(named: "Group863"), text: "두 번째 게시글 내용", timestamp: "2023-08-10")
+        let post3 = Post(image: UIImage(named: "Group863"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
+        let post4 = Post(image: UIImage(named: "Group863"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
+        let post5 = Post(image: UIImage(named: "Group863"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
+        let post6 = Post(image: UIImage(named: "Group863"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
+        let post7 = Post(image: UIImage(named: "Group863"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
 
-        posts = [post1, post2, post3]
+        posts = [post1, post2, post3,post4,post5,post6,post7]
 
+        
+        
         db = Firestore.firestore()
         auth = Auth.auth()
         storage = Storage.storage()
 
         loadCurrentUserProfile()
+        
+        self.collectionView.collectionViewLayout = createCompositionalLayoutForThird()
     }
 
     func loadCurrentUserProfile() {
@@ -90,9 +101,6 @@ class TitleViewController: UIViewController {
     }
 }
 
-
-// CollectionView data source and delegate extensions
-
 extension TitleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.posts.count
@@ -101,7 +109,12 @@ extension TitleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCustomViewCell", for: indexPath)
 
+        cell.contentView.backgroundColor = .gray
+        cell.contentView.layer.borderWidth = 1
+        cell.contentView.layer.borderColor = UIColor.lightGray.cgColor
+
         if let imageView = cell.viewWithTag(1) as? UIImageView {
+            imageView.contentMode = .center // Set the content mode to center
             imageView.image = self.posts[indexPath.item].image
         }
 
@@ -109,8 +122,18 @@ extension TitleViewController: UICollectionViewDataSource {
     }
 }
 
+extension TitleViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = (collectionView.bounds.width - 10) / 2
+        let cellHeight: CGFloat = 110
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+
+    // Add other UICollectionViewFlowLayoutDelegate methods if needed
+}
+
 extension TitleViewController: UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedPost = posts[indexPath.item]
         performSegue(withIdentifier: "DetailSegue", sender: selectedPost)
@@ -123,5 +146,33 @@ extension TitleViewController: UICollectionViewDelegate {
                 detailVC.post = selectedPost
             }
         }
+    }
+}
+
+//MARK: - 콜렉션뷰 콤포지셔널 레이아웃 관련
+extension TitleViewController {
+    
+    // ... (다른 콜렉션뷰 레이아웃 생성 함수들도 포함하여 그대로 유지)
+    
+    fileprivate func createCompositionalLayoutForThird() -> UICollectionViewLayout {
+        print("createCompositionalLayoutForThird() called")
+        // 콤포지셔널 레이아웃 생성
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+            
+            // 변경할 부분: 아이템 수를 3으로 변경
+            let groupHeight =  NSCollectionLayoutDimension.fractionalWidth(1/2.5)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
+            
+            // 변경할 부분: 그룹 내의 아이템 수를 3으로 변경
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            return section
+        }
+        return layout
     }
 }

@@ -560,6 +560,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="doneButton:" destination="QTS-Dg-lud" eventType="touchUpInside" id="u9h-ac-lg3"/>
+                                            <action selector="doneButtonTapped:" destination="QTS-Dg-lud" eventType="touchUpInside" id="JXd-UO-DNg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -577,9 +578,16 @@
                             <constraint firstItem="ie6-PZ-2lp" firstAttribute="top" secondItem="sJB-N1-GOy" secondAttribute="top" constant="50" id="tLk-wg-kdh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="mAN-eR-pN7"/>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="mAN-eR-pN7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pwQ-Ck-Hhq">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="QTS-Dg-lud" id="xfH-bQ-Am7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="ntu-So-ADy" id="fuk-Or-fhp"/>
+                        <outlet property="donebarbutton" destination="pwQ-Ck-Hhq" id="pJf-KB-Pgv"/>
                         <outlet property="emailStatusLabel" destination="8xq-DD-zuD" id="FMt-Qu-2ms"/>
                         <outlet property="emailTextField" destination="N7C-Cd-Aof" id="IEY-Wy-IrR"/>
                         <outlet property="emailTextField2" destination="DNp-DH-tnZ" id="a67-bT-pYa"/>
@@ -689,7 +697,7 @@
         <!--Navigation Controller-->
         <scene sceneID="e0Z-tL-hLT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Py3-xb-Vde" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenKeyboardAppears="YES" id="Py3-xb-Vde" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S5N-6C-G7e">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -706,7 +714,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ayY-hh-IA6"/>
+        <segue reference="Her-WG-I0N"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -22,13 +22,13 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func onMorebuttonClicked(_ sender: UIBarButtonItem) {
-        switch sender {
-        case moreButton:
-            let vc = UIStoryboard(name: "Mypage", bundle: nil).instantiateViewController(identifier: "MyTableVC") as! MyTableVC
-            presentPanModal(vc)
-        default:
-            break
+            switch sender {
+            case moreButton:
+                let vc = UIStoryboard(name: "Mypage", bundle: nil).instantiateViewController(identifier: "MyTableVC") as! MyTableVC
+                vc.modalPresentationStyle = .custom // 팝업 스타일 설정
+                presentPanModal(vc)
+            default:
+                break
+            }
         }
     }
-}
-

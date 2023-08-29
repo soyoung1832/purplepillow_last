@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let mainVC = storyboard.instantiateInitialViewController() {
                 mainVC.modalPresentationStyle = .fullScreen
                 window?.rootViewController = mainVC
+            
+                Unity.shared.setHostMainWindow(window)
             }
+            
         }
         
         return true
