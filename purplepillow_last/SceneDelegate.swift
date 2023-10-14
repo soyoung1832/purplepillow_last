@@ -16,9 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let storyboard = UIStoryboard(name: "Register", bundle: nil) // 스토리보드 이름을 수정하세요.
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
         if let initialViewController = storyboard.instantiateInitialViewController() {
             window?.rootViewController = initialViewController
+            
+            Unity.shared.setHostMainWindow(self.window)
         }
         
         window?.makeKeyAndVisible()

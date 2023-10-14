@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>Privacy - Notification Usage Description</key>
+	<string>&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+&lt;string&gt;앱에서 카메라를 사용하여 사진을 촬영합니다.&lt;/string&gt;</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>&lt;key&gt;NSNotificationUsageDescription&lt;/key&gt;
+&lt;string&gt;앱에서 알림을 사용하여 사용자에게 알림을 표시합니다.&lt;/string&gt;</string>
+	<key>NSCameraUsageDescription</key>
+	<string></string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneClassName</key>
+					<string></string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
 </plist>

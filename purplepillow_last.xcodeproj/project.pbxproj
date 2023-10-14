@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527D52DF2AD887350084C973 /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D52DE2AD887350084C973 /* AgreeViewController.swift */; };
+		52A3360A2AB14806009D13E0 /* Group 743.svg in Resources */ = {isa = PBXBuildFile; fileRef = 52A336092AB14806009D13E0 /* Group 743.svg */; };
+		52A3360E2AB15B9A009D13E0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */; };
+		52AA2B942AB0C30B001F72FB /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52AA2B922AB0C30B001F72FB /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52D196622ADB44B000A86618 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D196612ADB44B000A86618 /* AuthorityViewController.swift */; };
 		8D0AEC662A8AF162000001CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AEC652A8AF162000001CA /* DetailViewController.swift */; };
 		8D0AEC692A8C8EA7000001CA /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 8D0AEC682A8C8EA7000001CA /* PanModal */; };
 		8D0AEC6B2A8C96A0000001CA /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AEC6A2A8C969F000001CA /* MyTableVC.swift */; };
@@ -39,11 +44,9 @@
 		8DD7BB552A990E78000FA7D4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD7BB542A990E78000FA7D4 /* FirebaseFirestore */; };
 		8DD7BB572A990E78000FA7D4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD7BB562A990E78000FA7D4 /* FirebaseFirestoreSwift */; };
 		8DD7BB592A9910CA000FA7D4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD7BB582A9910CA000FA7D4 /* FirebaseStorage */; };
-		8DD7BB5C2A9DE65D000FA7D4 /* navigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7BB5B2A9DE65D000FA7D4 /* navigationBar.swift */; };
 		8DD7BB622A9DF0BC000FA7D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7BB612A9DF0BC000FA7D4 /* ContentView.swift */; };
 		8DD7BB642A9DF122000FA7D4 /* StudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7BB632A9DF122000FA7D4 /* StudioViewController.swift */; };
 		8DD7BB662A9DF19C000FA7D4 /* Unity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7BB652A9DF19C000FA7D4 /* Unity.swift */; };
-		8DD7BB682A9DF3EC000FA7D4 /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD7BB672A9DF3EC000FA7D4 /* UnityFramework.framework */; };
 		8DDF6CC82A865190008789C0 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDF6CC72A865190008789C0 /* TitleViewController.swift */; };
 		8DDF6CCA2A865279008789C0 /* Group 863.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDF6CC92A865279008789C0 /* Group 863.png */; };
 		8DDF6CCC2A870D6B008789C0 /* default_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDF6CCB2A870D6B008789C0 /* default_profile.png */; };
@@ -69,7 +72,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		52AA2B952AB0C30B001F72FB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				52AA2B942AB0C30B001F72FB /* UnityFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		527D52DE2AD887350084C973 /* AgreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
+		52A336092AB14806009D13E0 /* Group 743.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Group 743.svg"; path = "../../../Downloads/Group 743.svg"; sourceTree = "<group>"; };
+		52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		52AA2B922AB0C30B001F72FB /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D196612ADB44B000A86618 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		8D0AEC652A8AF162000001CA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D0AEC6A2A8C969F000001CA /* MyTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
 		8D0BD0B92A83809A00156C26 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +120,6 @@
 		8DB518402A821E5C0045B24B /* purplepillow_lastUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purplepillow_lastUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8DC652AA2A973F8F0062C963 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8DC652AC2A9743C00062C963 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8DD7BB5B2A9DE65D000FA7D4 /* navigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationBar.swift; sourceTree = "<group>"; };
 		8DD7BB612A9DF0BC000FA7D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8DD7BB632A9DF122000FA7D4 /* StudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioViewController.swift; sourceTree = "<group>"; };
 		8DD7BB652A9DF19C000FA7D4 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
@@ -118,7 +139,6 @@
 			files = (
 				8DD7BB532A990E78000FA7D4 /* FirebaseDatabaseSwift in Frameworks */,
 				8DD7BB4D2A990E78000FA7D4 /* FirebaseAppCheck in Frameworks */,
-				8DD7BB682A9DF3EC000FA7D4 /* UnityFramework.framework in Frameworks */,
 				8DD7BB4F2A990E78000FA7D4 /* FirebaseAuth in Frameworks */,
 				8DD7BB572A990E78000FA7D4 /* FirebaseFirestoreSwift in Frameworks */,
 				8DD7BB512A990E78000FA7D4 /* FirebaseDatabase in Frameworks */,
@@ -162,6 +182,9 @@
 				8DC652AA2A973F8F0062C963 /* HomeViewController.swift */,
 				8DC652AC2A9743C00062C963 /* ProfileViewController.swift */,
 				8DEE27952A97460000B1EE65 /* UserProfile.swift */,
+				52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */,
+				527D52DE2AD887350084C973 /* AgreeViewController.swift */,
+				52D196612ADB44B000A86618 /* AuthorityViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -211,12 +234,12 @@
 				8DDF6CCF2A87101D008789C0 /* ImageView */,
 				8DB5181D2A821E5A0045B24B /* AppDelegate.swift */,
 				8DB5181F2A821E5A0045B24B /* SceneDelegate.swift */,
-				8DD7BB5A2A9DE5F5000FA7D4 /* navigationView */,
 				8DDF6CCB2A870D6B008789C0 /* default_profile.png */,
 				8DB518262A821E5C0045B24B /* Assets.xcassets */,
 				8DDF6CC92A865279008789C0 /* Group 863.png */,
 				8DB518282A821E5C0045B24B /* LaunchScreen.storyboard */,
 				8DB5182B2A821E5C0045B24B /* Info.plist */,
+				52A336092AB14806009D13E0 /* Group 743.svg */,
 			);
 			path = purplepillow_last;
 			sourceTree = "<group>";
@@ -241,17 +264,10 @@
 		8DB518622A8221B00045B24B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52AA2B922AB0C30B001F72FB /* UnityFramework.framework */,
 				8DD7BB672A9DF3EC000FA7D4 /* UnityFramework.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8DD7BB5A2A9DE5F5000FA7D4 /* navigationView */ = {
-			isa = PBXGroup;
-			children = (
-				8DD7BB5B2A9DE65D000FA7D4 /* navigationBar.swift */,
-			);
-			path = navigationView;
 			sourceTree = "<group>";
 		};
 		8DDF6CCF2A87101D008789C0 /* ImageView */ = {
@@ -272,6 +288,7 @@
 				8DB518162A821E5A0045B24B /* Sources */,
 				8DB518172A821E5A0045B24B /* Frameworks */,
 				8DB518182A821E5A0045B24B /* Resources */,
+				52AA2B952AB0C30B001F72FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +405,7 @@
 				8DDF6CCC2A870D6B008789C0 /* default_profile.png in Resources */,
 				8DB518272A821E5C0045B24B /* Assets.xcassets in Resources */,
 				8D8CBFC22A8641B300FA9EF0 /* Home.storyboard in Resources */,
+				52A3360A2AB14806009D13E0 /* Group 743.svg in Resources */,
 				8DB518252A821E5A0045B24B /* Register.storyboard in Resources */,
 				8D8CBFBC2A862BC000FA9EF0 /* Main.storyboard in Resources */,
 			);
@@ -415,10 +433,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0BD0C42A8385E500156C26 /* UserViewController.swift in Sources */,
-				8DD7BB5C2A9DE65D000FA7D4 /* navigationBar.swift in Sources */,
 				8DB518222A821E5A0045B24B /* ViewController.swift in Sources */,
 				8DB5181E2A821E5A0045B24B /* AppDelegate.swift in Sources */,
 				8D0BD0C62A8385F200156C26 /* EmailViewController.swift in Sources */,
+				52D196622ADB44B000A86618 /* AuthorityViewController.swift in Sources */,
 				8D0BD0BA2A83809A00156C26 /* SignUpViewController.swift in Sources */,
 				8DC652AB2A973F8F0062C963 /* HomeViewController.swift in Sources */,
 				8DC652AD2A9743C00062C963 /* ProfileViewController.swift in Sources */,
@@ -428,6 +446,7 @@
 				8D0BD0BC2A8380CB00156C26 /* LoginViewController.swift in Sources */,
 				8DDF6CC82A865190008789C0 /* TitleViewController.swift in Sources */,
 				8DEE9CBD2A8A1F1E00309578 /* Post.swift in Sources */,
+				52A3360E2AB15B9A009D13E0 /* SettingsTableViewController.swift in Sources */,
 				8DB518202A821E5A0045B24B /* SceneDelegate.swift in Sources */,
 				8D0AEC6B2A8C96A0000001CA /* MyTableVC.swift in Sources */,
 				8DD7BB642A9DF122000FA7D4 /* StudioViewController.swift in Sources */,
@@ -435,6 +454,7 @@
 				8D0BD0C82A83860E00156C26 /* PasswordViewController.swift in Sources */,
 				8DD7BB662A9DF19C000FA7D4 /* Unity.swift in Sources */,
 				8DEE27962A97460000B1EE65 /* UserProfile.swift in Sources */,
+				527D52DF2AD887350084C973 /* AgreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PurplePillow;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -594,6 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PurplePillow;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
