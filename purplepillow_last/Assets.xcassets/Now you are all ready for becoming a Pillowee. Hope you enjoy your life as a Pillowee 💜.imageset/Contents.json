@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Now you are all ready for becoming a Pillowee. Hope you enjoy your life as a Pillowee 💜.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

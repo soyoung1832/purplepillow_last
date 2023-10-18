@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "You can find your friends and become a Pillowee with them. You can share your spaces with your Pilloweez..png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

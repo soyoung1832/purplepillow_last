@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5272D1632ADDA2C800887FD0 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272D1622ADDA2C800887FD0 /* MyCustomTableViewCell.swift */; };
+		5272D1702ADE455D00887FD0 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272D16E2ADE455D00887FD0 /* PostCollectionViewCell.swift */; };
+		5272D1712ADE455D00887FD0 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5272D16F2ADE455D00887FD0 /* PostCell.xib */; };
 		527D52DF2AD887350084C973 /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D52DE2AD887350084C973 /* AgreeViewController.swift */; };
-		52A3360A2AB14806009D13E0 /* Group 743.svg in Resources */ = {isa = PBXBuildFile; fileRef = 52A336092AB14806009D13E0 /* Group 743.svg */; };
+		52812F462ADBDBB5009B3BF4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52812F452ADBDBB5009B3BF4 /* HomeTableViewController.swift */; };
+		52812F4C2ADBDC9F009B3BF4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52812F4A2ADBDC9F009B3BF4 /* TableViewCell.swift */; };
+		52812F4D2ADBDC9F009B3BF4 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52812F4B2ADBDC9F009B3BF4 /* TableViewCell.xib */; };
+		52812F502ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52812F4E2ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.swift */; };
+		52812F512ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52812F4F2ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.xib */; };
+		52812F542ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52812F522ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift */; };
+		52812F552ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52812F532ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib */; };
 		52A3360E2AB15B9A009D13E0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */; };
 		52AA2B942AB0C30B001F72FB /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52AA2B922AB0C30B001F72FB /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52B7D6612ADC29B300A859E3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52B7D6602ADC29B300A859E3 /* SDWebImage */; };
+		52CE82952AE043DC007C93D4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE82942AE043DC007C93D4 /* Models.swift */; };
 		52D196622ADB44B000A86618 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D196612ADB44B000A86618 /* AuthorityViewController.swift */; };
 		8D0AEC662A8AF162000001CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AEC652A8AF162000001CA /* DetailViewController.swift */; };
 		8D0AEC692A8C8EA7000001CA /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 8D0AEC682A8C8EA7000001CA /* PanModal */; };
@@ -87,10 +98,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5272D1622ADDA2C800887FD0 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
+		5272D16E2ADE455D00887FD0 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		5272D16F2ADE455D00887FD0 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		527D52DE2AD887350084C973 /* AgreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
-		52A336092AB14806009D13E0 /* Group 743.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Group 743.svg"; path = "../../../Downloads/Group 743.svg"; sourceTree = "<group>"; };
+		52812F452ADBDBB5009B3BF4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		52812F4A2ADBDC9F009B3BF4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		52812F4B2ADBDC9F009B3BF4 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		52812F4E2ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilloweezCollectionViewCell.swift; sourceTree = "<group>"; };
+		52812F4F2ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PilloweezCollectionViewCell.xib; sourceTree = "<group>"; };
+		52812F522ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionViewCell.swift; sourceTree = "<group>"; };
+		52812F532ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalCollectionViewCell.xib; sourceTree = "<group>"; };
 		52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		52AA2B922AB0C30B001F72FB /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B7D65F2ADC299800A859E3 /* SDWebImage-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SDWebImage-master"; path = "../../Downloads/SDWebImage-master"; sourceTree = "<group>"; };
+		52CE82942AE043DC007C93D4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		52D196612ADB44B000A86618 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		8D0AEC652A8AF162000001CA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D0AEC6A2A8C969F000001CA /* MyTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
@@ -143,6 +165,7 @@
 				8DD7BB572A990E78000FA7D4 /* FirebaseFirestoreSwift in Frameworks */,
 				8DD7BB512A990E78000FA7D4 /* FirebaseDatabase in Frameworks */,
 				8DD7BB592A9910CA000FA7D4 /* FirebaseStorage in Frameworks */,
+				52B7D6612ADC29B300A859E3 /* SDWebImage in Frameworks */,
 				8D0AEC692A8C8EA7000001CA /* PanModal in Frameworks */,
 				8DD7BB552A990E78000FA7D4 /* FirebaseFirestore in Frameworks */,
 			);
@@ -165,26 +188,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5272D1642ADDA7F900887FD0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				8D8CBFC32A8641C600FA9EF0 /* Mypage.storyboard */,
+				8DDF6CC72A865190008789C0 /* TitleViewController.swift */,
+				8D0AEC652A8AF162000001CA /* DetailViewController.swift */,
+				8D0AEC6A2A8C969F000001CA /* MyTableVC.swift */,
+				52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */,
+				5272D16F2ADE455D00887FD0 /* PostCell.xib */,
+				5272D16E2ADE455D00887FD0 /* PostCollectionViewCell.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		52812F472ADBDC6B009B3BF4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52812F4A2ADBDC9F009B3BF4 /* TableViewCell.swift */,
+				52812F4B2ADBDC9F009B3BF4 /* TableViewCell.xib */,
+				52812F4E2ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.swift */,
+				52812F4F2ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.xib */,
+				52812F522ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift */,
+				52812F532ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib */,
+				8DC652AA2A973F8F0062C963 /* HomeViewController.swift */,
+				8D8CBFC12A8641B300FA9EF0 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		52B7D65E2ADC299800A859E3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				52B7D65F2ADC299800A859E3 /* SDWebImage-master */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		52CE82922ADF9EE8007C93D4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8DB518232A821E5A0045B24B /* Register.storyboard */,
+				8D0BD0B92A83809A00156C26 /* SignUpViewController.swift */,
+				8D0BD0BB2A8380CB00156C26 /* LoginViewController.swift */,
+				527D52DE2AD887350084C973 /* AgreeViewController.swift */,
+				52D196612ADB44B000A86618 /* AuthorityViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		52CE82932AE041AC007C93D4 /* DataType */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE9CBC2A8A1F1E00309578 /* Post.swift */,
+				8DEE27952A97460000B1EE65 /* UserProfile.swift */,
+				52CE82942AE043DC007C93D4 /* Models.swift */,
+			);
+			path = DataType;
+			sourceTree = "<group>";
+		};
 		8D0BD0BF2A83810800156C26 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8D0AEC6A2A8C969F000001CA /* MyTableVC.swift */,
 				8DB518212A821E5A0045B24B /* ViewController.swift */,
-				8D0BD0B92A83809A00156C26 /* SignUpViewController.swift */,
-				8D0BD0BB2A8380CB00156C26 /* LoginViewController.swift */,
 				8D0BD0C32A8385E500156C26 /* UserViewController.swift */,
 				8D0BD0C52A8385F200156C26 /* EmailViewController.swift */,
 				8D0BD0C72A83860E00156C26 /* PasswordViewController.swift */,
 				8D3C27672A83F26500FE6856 /* VertifyViewController.swift */,
-				8DDF6CC72A865190008789C0 /* TitleViewController.swift */,
-				8DEE9CBC2A8A1F1E00309578 /* Post.swift */,
-				8D0AEC652A8AF162000001CA /* DetailViewController.swift */,
-				8DC652AA2A973F8F0062C963 /* HomeViewController.swift */,
 				8DC652AC2A9743C00062C963 /* ProfileViewController.swift */,
-				8DEE27952A97460000B1EE65 /* UserProfile.swift */,
-				52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */,
-				527D52DE2AD887350084C973 /* AgreeViewController.swift */,
-				52D196612ADB44B000A86618 /* AuthorityViewController.swift */,
+				5272D1622ADDA2C800887FD0 /* MyCustomTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -192,11 +264,8 @@
 		8D8CBFC02A86407B00FA9EF0 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				8DB518232A821E5A0045B24B /* Register.storyboard */,
 				8D8CBFBB2A862BC000FA9EF0 /* Main.storyboard */,
-				8D8CBFC12A8641B300FA9EF0 /* Home.storyboard */,
 				8D8CBFC52A86432900FA9EF0 /* Studio.storyboard */,
-				8D8CBFC32A8641C600FA9EF0 /* Mypage.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -204,6 +273,7 @@
 		8DB518112A821E5A0045B24B = {
 			isa = PBXGroup;
 			children = (
+				52B7D65E2ADC299800A859E3 /* Packages */,
 				8DD7BB652A9DF19C000FA7D4 /* Unity.swift */,
 				8DD7BB632A9DF122000FA7D4 /* StudioViewController.swift */,
 				8DD7BB612A9DF0BC000FA7D4 /* ContentView.swift */,
@@ -229,6 +299,10 @@
 		8DB5181C2A821E5A0045B24B /* purplepillow_last */ = {
 			isa = PBXGroup;
 			children = (
+				52CE82932AE041AC007C93D4 /* DataType */,
+				52CE82922ADF9EE8007C93D4 /* Register */,
+				5272D1642ADDA7F900887FD0 /* MyPage */,
+				52812F472ADBDC6B009B3BF4 /* Home */,
 				8D8CBFC02A86407B00FA9EF0 /* Storyboard */,
 				8D0BD0BF2A83810800156C26 /* View Controllers */,
 				8DDF6CCF2A87101D008789C0 /* ImageView */,
@@ -239,7 +313,7 @@
 				8DDF6CC92A865279008789C0 /* Group 863.png */,
 				8DB518282A821E5C0045B24B /* LaunchScreen.storyboard */,
 				8DB5182B2A821E5C0045B24B /* Info.plist */,
-				52A336092AB14806009D13E0 /* Group 743.svg */,
+				52812F452ADBDBB5009B3BF4 /* HomeTableViewController.swift */,
 			);
 			path = purplepillow_last;
 			sourceTree = "<group>";
@@ -304,6 +378,7 @@
 				8DD7BB542A990E78000FA7D4 /* FirebaseFirestore */,
 				8DD7BB562A990E78000FA7D4 /* FirebaseFirestoreSwift */,
 				8DD7BB582A9910CA000FA7D4 /* FirebaseStorage */,
+				52B7D6602ADC29B300A859E3 /* SDWebImage */,
 			);
 			productName = purplepillow_last;
 			productReference = 8DB5181A2A821E5A0045B24B /* purplepillow_last.app */;
@@ -398,14 +473,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8CBFC62A86432900FA9EF0 /* Studio.storyboard in Resources */,
+				52812F4D2ADBDC9F009B3BF4 /* TableViewCell.xib in Resources */,
 				8DB5182A2A821E5C0045B24B /* LaunchScreen.storyboard in Resources */,
 				8D8CBFC42A8641C600FA9EF0 /* Mypage.storyboard in Resources */,
 				8D3C27632A838F4300FE6856 /* GoogleService-Info.plist in Resources */,
 				8DDF6CCA2A865279008789C0 /* Group 863.png in Resources */,
 				8DDF6CCC2A870D6B008789C0 /* default_profile.png in Resources */,
+				52812F512ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.xib in Resources */,
+				52812F552ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib in Resources */,
 				8DB518272A821E5C0045B24B /* Assets.xcassets in Resources */,
+				5272D1712ADE455D00887FD0 /* PostCell.xib in Resources */,
 				8D8CBFC22A8641B300FA9EF0 /* Home.storyboard in Resources */,
-				52A3360A2AB14806009D13E0 /* Group 743.svg in Resources */,
 				8DB518252A821E5A0045B24B /* Register.storyboard in Resources */,
 				8D8CBFBC2A862BC000FA9EF0 /* Main.storyboard in Resources */,
 			);
@@ -432,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52812F462ADBDBB5009B3BF4 /* HomeTableViewController.swift in Sources */,
 				8D0BD0C42A8385E500156C26 /* UserViewController.swift in Sources */,
 				8DB518222A821E5A0045B24B /* ViewController.swift in Sources */,
 				8DB5181E2A821E5A0045B24B /* AppDelegate.swift in Sources */,
@@ -440,20 +519,26 @@
 				8D0BD0BA2A83809A00156C26 /* SignUpViewController.swift in Sources */,
 				8DC652AB2A973F8F0062C963 /* HomeViewController.swift in Sources */,
 				8DC652AD2A9743C00062C963 /* ProfileViewController.swift in Sources */,
+				52CE82952AE043DC007C93D4 /* Models.swift in Sources */,
 				8DD7BB622A9DF0BC000FA7D4 /* ContentView.swift in Sources */,
 				8DDF6CCE2A871002008789C0 /* RoundImageView.swift in Sources */,
 				8D0AEC662A8AF162000001CA /* DetailViewController.swift in Sources */,
+				5272D1702ADE455D00887FD0 /* PostCollectionViewCell.swift in Sources */,
 				8D0BD0BC2A8380CB00156C26 /* LoginViewController.swift in Sources */,
 				8DDF6CC82A865190008789C0 /* TitleViewController.swift in Sources */,
 				8DEE9CBD2A8A1F1E00309578 /* Post.swift in Sources */,
 				52A3360E2AB15B9A009D13E0 /* SettingsTableViewController.swift in Sources */,
+				52812F542ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift in Sources */,
 				8DB518202A821E5A0045B24B /* SceneDelegate.swift in Sources */,
 				8D0AEC6B2A8C96A0000001CA /* MyTableVC.swift in Sources */,
+				52812F502ADBDEB3009B3BF4 /* PilloweezCollectionViewCell.swift in Sources */,
 				8DD7BB642A9DF122000FA7D4 /* StudioViewController.swift in Sources */,
 				8D3C27682A83F26500FE6856 /* VertifyViewController.swift in Sources */,
+				52812F4C2ADBDC9F009B3BF4 /* TableViewCell.swift in Sources */,
 				8D0BD0C82A83860E00156C26 /* PasswordViewController.swift in Sources */,
 				8DD7BB662A9DF19C000FA7D4 /* Unity.swift in Sources */,
 				8DEE27962A97460000B1EE65 /* UserProfile.swift in Sources */,
+				5272D1632ADDA2C800887FD0 /* MyCustomTableViewCell.swift in Sources */,
 				527D52DF2AD887350084C973 /* AgreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,6 +904,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		52B7D6602ADC29B300A859E3 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDWebImage;
+		};
 		8D0AEC682A8C8EA7000001CA /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D0AEC672A8C8EA7000001CA /* XCRemoteSwiftPackageReference "PanModal" */;
