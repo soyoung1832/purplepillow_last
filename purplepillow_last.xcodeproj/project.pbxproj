@@ -19,8 +19,7 @@
 		52812F542ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52812F522ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift */; };
 		52812F552ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52812F532ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib */; };
 		52A3360E2AB15B9A009D13E0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */; };
-		52AA2B942AB0C30B001F72FB /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52AA2B922AB0C30B001F72FB /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		52B7D6612ADC29B300A859E3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52B7D6602ADC29B300A859E3 /* SDWebImage */; };
+		52B7F8CB2AE8ACEE00258CA9 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52B7F8C92AE8ACEE00258CA9 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52CE82952AE043DC007C93D4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE82942AE043DC007C93D4 /* Models.swift */; };
 		52D196622ADB44B000A86618 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D196612ADB44B000A86618 /* AuthorityViewController.swift */; };
 		8D0AEC662A8AF162000001CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AEC652A8AF162000001CA /* DetailViewController.swift */; };
@@ -90,7 +89,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				52AA2B942AB0C30B001F72FB /* UnityFramework.framework in Embed Frameworks */,
+				52B7F8CB2AE8ACEE00258CA9 /* UnityFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,8 +109,7 @@
 		52812F522ADBDF0D009B3BF4 /* VerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionViewCell.swift; sourceTree = "<group>"; };
 		52812F532ADBDF0D009B3BF4 /* VerticalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalCollectionViewCell.xib; sourceTree = "<group>"; };
 		52A3360D2AB15B9A009D13E0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		52AA2B922AB0C30B001F72FB /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52B7D65F2ADC299800A859E3 /* SDWebImage-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SDWebImage-master"; path = "../../Downloads/SDWebImage-master"; sourceTree = "<group>"; };
+		52B7F8C92AE8ACEE00258CA9 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CE82942AE043DC007C93D4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		52D196612ADB44B000A86618 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		8D0AEC652A8AF162000001CA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 		8DD7BB612A9DF0BC000FA7D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8DD7BB632A9DF122000FA7D4 /* StudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioViewController.swift; sourceTree = "<group>"; };
 		8DD7BB652A9DF19C000FA7D4 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
-		8DD7BB672A9DF3EC000FA7D4 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DDF6CC72A865190008789C0 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		8DDF6CC92A865279008789C0 /* Group 863.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group 863.png"; sourceTree = "<group>"; };
 		8DDF6CCB2A870D6B008789C0 /* default_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_profile.png; sourceTree = "<group>"; };
@@ -165,7 +162,6 @@
 				8DD7BB572A990E78000FA7D4 /* FirebaseFirestoreSwift in Frameworks */,
 				8DD7BB512A990E78000FA7D4 /* FirebaseDatabase in Frameworks */,
 				8DD7BB592A9910CA000FA7D4 /* FirebaseStorage in Frameworks */,
-				52B7D6612ADC29B300A859E3 /* SDWebImage in Frameworks */,
 				8D0AEC692A8C8EA7000001CA /* PanModal in Frameworks */,
 				8DD7BB552A990E78000FA7D4 /* FirebaseFirestore in Frameworks */,
 			);
@@ -217,14 +213,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		52B7D65E2ADC299800A859E3 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				52B7D65F2ADC299800A859E3 /* SDWebImage-master */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		52CE82922ADF9EE8007C93D4 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +261,6 @@
 		8DB518112A821E5A0045B24B = {
 			isa = PBXGroup;
 			children = (
-				52B7D65E2ADC299800A859E3 /* Packages */,
 				8DD7BB652A9DF19C000FA7D4 /* Unity.swift */,
 				8DD7BB632A9DF122000FA7D4 /* StudioViewController.swift */,
 				8DD7BB612A9DF0BC000FA7D4 /* ContentView.swift */,
@@ -338,8 +325,7 @@
 		8DB518622A8221B00045B24B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52AA2B922AB0C30B001F72FB /* UnityFramework.framework */,
-				8DD7BB672A9DF3EC000FA7D4 /* UnityFramework.framework */,
+				52B7F8C92AE8ACEE00258CA9 /* UnityFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,7 +364,6 @@
 				8DD7BB542A990E78000FA7D4 /* FirebaseFirestore */,
 				8DD7BB562A990E78000FA7D4 /* FirebaseFirestoreSwift */,
 				8DD7BB582A9910CA000FA7D4 /* FirebaseStorage */,
-				52B7D6602ADC29B300A859E3 /* SDWebImage */,
 			);
 			productName = purplepillow_last;
 			productReference = 8DB5181A2A821E5A0045B24B /* purplepillow_last.app */;
@@ -904,10 +889,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		52B7D6602ADC29B300A859E3 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDWebImage;
-		};
 		8D0AEC682A8C8EA7000001CA /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D0AEC672A8C8EA7000001CA /* XCRemoteSwiftPackageReference "PanModal" */;

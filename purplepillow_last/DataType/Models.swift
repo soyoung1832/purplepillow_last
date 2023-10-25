@@ -1,10 +1,3 @@
-//
-//  Models.swift
-//  purplepillow_last
-//
-//  Created by test on 2023/10/19.
-//
-
 import Foundation
 import UIKit
 

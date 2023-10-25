@@ -1,14 +1,7 @@
-//
-//  AppDelegate.swift
-//  purplepillow_last
-//
-//  Created by kim yeon kyung on 2023/08/08.
-//
-
 import UIKit
 import FirebaseCore
 import FirebaseAuth
-import FirebaseDatabase
+
 
 
 @main
@@ -32,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
 
 
         // MARK: UISceneSession Lifecycle

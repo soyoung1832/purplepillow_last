@@ -1,10 +1,3 @@
-//
-//  StudioViewController.swift
-//  purplepillow_last
-//
-//  Created by kim yeon kyung on 2023/08/29.
-//
-
 import UIKit
 import SwiftUI
 
