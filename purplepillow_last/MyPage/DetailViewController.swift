@@ -1,26 +1,113 @@
 import UIKit
 import PanModal
+import Firebase
+import FirebaseAuth
 
 class DetailViewController: UIViewController {
 
 
-    @IBOutlet weak var timestampLabel: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textLabel: UITextField!
+   
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var timestamp: UILabel!
+    @IBOutlet weak var pilloweezBtn: UIButton!
+    @IBOutlet weak var postImg: UIImageView!
+    @IBOutlet weak var explain: UILabel!
+    
     @IBOutlet weak var moreButton: UIBarButtonItem!
+    
+    var post1: userPost?
+    
+    let auth = Auth.auth()
+    
+    @objc func profileImgTapped() {
+        print("Profile Image Tapped") // 확인을 위해 로그를 추가해 보세요
 
-    var post: Post?
+        // 클릭 이벤트 핸들러 내에서 데이터 전달 및 화면 전환을 수행
+        let uid = post1?.uid
+        if let currentUserUid = auth.currentUser?.uid {
+            var storyboardName: String
+            var viewControllerIdentifier: String
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+            if uid == currentUserUid {
+                storyboardName = "Mypage"
+                viewControllerIdentifier = "TitleViewController"
+            } else {
+                storyboardName = "Home"
+                viewControllerIdentifier = "UserTitleViewController"
+            }
 
-        if let post = post {
-            imageView.image = post.image
-            textLabel.text = post.text
-            timestampLabel.text = post.timestamp
+            if let detailViewController = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: viewControllerIdentifier) as? UIViewController {
+                if let detailViewController = detailViewController as? TitleViewController {
+                    // 선택한 게시물을 TitleViewController에 전달합니다.
+                    // detailViewController.post1 = post1
+                } else if let detailViewController = detailViewController as? UserTitleViewController {
+                    // 선택한 게시물을 UserTitleViewController에 전달합니다.
+                    detailViewController.visitedUserID = uid
+                }
+                navigationController?.pushViewController(detailViewController, animated: true)
+            }
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        username.text = post1?.username
+        timestamp.text = post1?.timestamp
+        explain.text = post1?.explain
+        loadProfile()
+        loadPostImage()
+        
+        profileImg.layer.cornerRadius = profileImg.frame.height / 2
+        profileImg.layer.borderWidth = 1
+        profileImg.clipsToBounds = true
+        profileImg.layer.borderColor = UIColor.blue.cgColor
+        
+        postImg.layer.cornerRadius=10
+        
+        profileImg.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTapped))
+        profileImg.addGestureRecognizer(tapGesture)
+    
+    }
+
+    
+    func loadProfile() {
+        if let Profile = post1?.profile, let url = URL(string: Profile) {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Error downloading image: \(error)")
+                    return
+                }
+
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.profileImg.image = image
+                    }
+                }
+            }.resume()
+        }
+    }
+    
+    func loadPostImage() {
+        if let imageUrl = post1?.imageUrl, let url = URL(string: imageUrl) {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Error downloading image: \(error)")
+                    return
+                }
+
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.postImg.image = image
+                    }
+                }
+            }.resume()
+        }
+    }
+    
     @IBAction func onMorebuttonClicked(_ sender: UIBarButtonItem) {
             switch sender {
             case moreButton:

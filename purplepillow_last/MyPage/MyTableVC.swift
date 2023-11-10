@@ -9,29 +9,28 @@ import Foundation
 import UIKit
 import PanModal
 
-class MyTableVC : UITableViewController {
+class MyTableVC: UITableViewController,PanModalPresentable {
+    var panScrollable: UIScrollView?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    struct CellData {
+        var title: String
+        var image: UIImage  // 이미지를 UIImage로 저장
     }
-}
 
-extension MyTableVC: PanModalPresentable{
-    
-    var panScrollable: UIScrollView? {
-        return tableView
+    let data = [CellData(title: "Delete", image: UIImage(named: "Group 770")!),
+                CellData(title: "Edit", image: UIImage(named: "4084230-200 1")!)]
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
-    
-    var shortFormHeight: PanModalHeight{
-        return.contentHeight(300)
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MoreCell", for: indexPath) as! MoreTableViewCell
+        let cellData = data[indexPath.row]
+        cell.BtnLabel.text = cellData.title
+        cell.BtnImg.image = cellData.image  // 이미지 설정
+
+        return cell
     }
-    
-    var longFormHeight: PanModalHeight{
-        return .maxHeightWithTopInset(100)
-    }
-    
-    var anchorModalToLongForm: Bool{
-        return true
-    }
-    
 }

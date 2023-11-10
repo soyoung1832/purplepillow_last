@@ -22,26 +22,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default_profile" translatesAutoresizingMaskIntoConstraints="NO" id="bYL-9C-zYO">
-                        <rect key="frame" x="25" y="20" width="81" height="81"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profile" translatesAutoresizingMaskIntoConstraints="NO" id="bYL-9C-zYO">
+                        <rect key="frame" x="24.666666666666671" y="25" width="81" height="81"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="81" id="7EN-ZS-Pdt"/>
                             <constraint firstAttribute="width" constant="81" id="Soi-eI-k1c"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="81" id="iBO-xe-GO2"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81" id="zTH-tl-miy"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F5y-0h-y7Y">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F5y-0h-y7Y">
                         <rect key="frame" x="49.666666666666657" y="116" width="31" height="34"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNg-Jw-sNv">
-                                <rect key="frame" x="0.0" y="0.0" width="31" height="14.333333333333334"/>
+                                <rect key="frame" x="0.0" y="0.0" width="31" height="16.666666666666668"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sRv-kX-gbK">
-                                <rect key="frame" x="0.0" y="19.333333333333332" width="31" height="14.666666666666668"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sRv-kX-gbK">
+                                <rect key="frame" x="4.6666666666666661" y="21.666666666666668" width="21.666666666666671" height="12.333333333333332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,6 +57,9 @@
                             <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="13"/>
                             <color key="baseBackgroundColor" red="0.31372550129999999" green="0.050980389119999997" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="visitButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="HMK-XJ-PqV"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -66,6 +71,7 @@
                 <constraint firstItem="bYL-9C-zYO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Dhq-YV-9JO"/>
                 <constraint firstItem="F5y-0h-y7Y" firstAttribute="top" secondItem="bYL-9C-zYO" secondAttribute="bottom" constant="10" id="MeH-0X-gFA"/>
                 <constraint firstItem="bYL-9C-zYO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="hre-hm-hzn"/>
+                <constraint firstItem="F5y-0h-y7Y" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="q0R-a4-Z5J"/>
                 <constraint firstItem="ev6-v6-UPW" firstAttribute="top" secondItem="F5y-0h-y7Y" secondAttribute="bottom" constant="10" id="uvZ-S4-JAg"/>
             </constraints>
             <size key="customSize" width="130" height="200"/>
@@ -74,6 +80,7 @@
                 <outlet property="bioLabel" destination="sRv-kX-gbK" id="isI-hV-5Ax"/>
                 <outlet property="profileImg" destination="bYL-9C-zYO" id="fwo-vv-3YN"/>
                 <outlet property="usernameLabel" destination="uNg-Jw-sNv" id="y6d-eh-9OJ"/>
+                <outlet property="visitBtn" destination="ev6-v6-UPW" id="zvU-0V-nzX"/>
             </connections>
             <point key="canvasLocation" x="126.71755725190839" y="73.239436619718319"/>
         </collectionViewCell>

@@ -19,9 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         if let initialViewController = storyboard.instantiateInitialViewController() {
             window?.rootViewController = initialViewController
-            
-            Unity.shared.setHostMainWindow(self.window)
-        }
+                    }
         
         window?.makeKeyAndVisible()
     }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="NotificationsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsCell" rowHeight="70" id="KGk-i7-Jjw" customClass="NotificationsTableViewCell" customModule="purplepillow_last" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="437" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="437" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="usernameLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPE-dG-gua" userLabel="username Label">
+                        <rect key="frame" x="78" y="24" width="34" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21.670000000000002" id="gei-18-6Ey"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-Wi-RNQ">
+                        <rect key="frame" x="362" y="21" width="60" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="BGB-P8-ko3"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="OJ2-Lo-81r"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="28" id="lYW-QP-Eyl"/>
+                            <constraint firstAttribute="height" constant="28" id="yeu-yN-4JP"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled">
+                            <attributedString key="attributedTitle">
+                                <fragment content="삭제">
+                                    <attributes>
+                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <color key="baseBackgroundColor" red="0.95567000089999998" green="0.95567000089999998" blue="0.95567000089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="didTapCancelBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Oxe-50-7a6"/>
+                        </connections>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ProfileImg" image="default_profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="xrn-qz-G1O">
+                        <rect key="frame" x="15" y="7.6666666666666643" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="55" id="JKr-kU-Zm0"/>
+                            <constraint firstAttribute="height" constant="55" id="OkG-6e-A4m"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="RMo-yC-v5I"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="WZX-BG-a5c"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="55" id="bdq-hK-wI6"/>
+                            <constraint firstAttribute="width" constant="55" id="fi4-az-g6o"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCX-LT-jk4">
+                        <rect key="frame" x="294" y="21" width="60" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="8g7-1K-KeF"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="jDQ-1i-Qzq"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="qf7-Ha-C15"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="29" id="rah-Rk-g1t"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled">
+                            <attributedString key="attributedTitle">
+                                <fragment content="수락">
+                                    <attributes>
+                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="baseBackgroundColor" red="0.38264292480000001" green="0.22936004400000001" blue="0.99758058790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="didTapAcceptBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bMJ-37-Ha2"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UHq-Wi-RNQ" secondAttribute="trailing" constant="15" id="24d-yl-pRV"/>
+                    <constraint firstItem="UHq-Wi-RNQ" firstAttribute="leading" secondItem="kCX-LT-jk4" secondAttribute="trailing" constant="8" id="3Wb-IX-JJC"/>
+                    <constraint firstItem="kCX-LT-jk4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9D2-Z0-ecU"/>
+                    <constraint firstItem="CPE-dG-gua" firstAttribute="leading" secondItem="xrn-qz-G1O" secondAttribute="trailing" constant="8" id="PKv-37-zHR"/>
+                    <constraint firstItem="xrn-qz-G1O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="a8L-N2-lYS"/>
+                    <constraint firstItem="xrn-qz-G1O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dp3-bz-QbC"/>
+                    <constraint firstItem="CPE-dG-gua" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gTK-8S-WE2"/>
+                    <constraint firstItem="UHq-Wi-RNQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lsY-aL-bnS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="UserProfileImg" destination="xrn-qz-G1O" id="ojm-op-ycb"/>
+                <outlet property="acceptBtn" destination="kCX-LT-jk4" id="Ksb-PU-qO8"/>
+                <outlet property="cancelBtn" destination="UHq-Wi-RNQ" id="CGD-aK-ItD"/>
+                <outlet property="username" destination="CPE-dG-gua" id="3CN-p1-cAp"/>
+            </connections>
+            <point key="canvasLocation" x="151.90839694656489" y="9.1549295774647899"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="default_profile.png" width="200" height="200"/>
+    </resources>
+</document>

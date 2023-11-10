@@ -7,6 +7,13 @@ class VerticalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
 
+    var visitButtonAction: ((String) -> Void)?
+
+    
+    var userProfile: UserProfile? // 사용자 프로필 정보 저장용 변수
+
+    @IBOutlet weak var visitBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImg.layer.cornerRadius = 40
@@ -20,10 +27,18 @@ class VerticalCollectionViewCell: UICollectionViewCell {
         backImg.clipsToBounds = true
         backImg.layer.borderColor = UIColor.lightGray.cgColor
         
-        backImg.layer.borderWidth=0.5
+        backImg.layer.borderWidth = 0.5
         
     }
+   
 
+     
+    @IBAction func visitButtonTapped(_ sender: UIButton) {
+           visitButtonAction?(userProfile?.uid ?? "")
+        
+        print(userProfile?.uid )
+       }
+    
     func configure(with userProfile: UserProfile) {
         if let imageUrl = userProfile.imageUrl, let url = URL(string: imageUrl) {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -38,4 +53,7 @@ class VerticalCollectionViewCell: UICollectionViewCell {
         usernameLabel?.text = userProfile.username ?? "DefaultUsername"
         bioLabel?.text = userProfile.bio ?? "DefaultBio"
     }
+    
+    
 }
+

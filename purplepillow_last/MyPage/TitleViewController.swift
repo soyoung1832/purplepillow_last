@@ -1,9 +1,14 @@
 import UIKit
 import Firebase
-import FirebaseStorage
 import FirebaseFirestore
+import FirebaseStorage
 
 class TitleViewController: UIViewController, UICollectionViewDelegate {
+    
+    var userProfile: UserProfile?
+        
+    @IBOutlet weak var addFriendButton: UIButton!
+    @IBOutlet weak var unfriendButton: UIButton!
     
     @IBOutlet weak var backImg: UIImageView!
     @IBOutlet weak var ProfileImageView: UIImageView!
@@ -15,10 +20,11 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var DefaultFlowBtn: UIButton!
     @IBOutlet weak var Default2FlowBtn: UIButton!
     
-    @IBOutlet weak var view2: UIView!
     
-    fileprivate var posts: [Post] = []
-    fileprivate var currentUserProfile: UserProfile?
+    @IBOutlet weak var pilloweezCount: UILabel!
+    
+    var posts: [userPost] = []
+    var currentUserProfile: UserProfile?
     var db: Firestore!
     var auth: Auth!
     var storage: Storage!
@@ -36,16 +42,7 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
         setupUI()
         setupCollectionView()
         setupFirebase()
-        
-        let post1 = Post(image: UIImage(named: "Ex1"), text: "첫 번째 게시글 내용", timestamp: "2023-08-09")
-        let post2 = Post(image: UIImage(named: "Ex1"), text: "두 번째 게시글 내용", timestamp: "2023-08-10")
-        let post3 = Post(image: UIImage(named: "Ex1"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
-        let post4 = Post(image: UIImage(named: "Ex1"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
-        let post5 = Post(image: UIImage(named: "Ex1"), text: "세 번째 게시글 내용", timestamp: "2023-08-11")
-        
-          
-        // Add these posts to the 'posts' array
-        posts = [post1, post2, post3,post4,post5]
+        loadUserPosts()
         
         // Set the collection view layout to the default layout
         PostcollectionView.collectionViewLayout = createCompositionalLayoutForTwoByTwo()
@@ -63,12 +60,26 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
         PostcollectionView.delegate = self
         
         PostcollectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
+        PostcollectionView.register(UINib(nibName: "Post2Cell", bundle: nil),forCellWithReuseIdentifier: "Post2Cell")
         
         // Set the estimated item size for better cell sizing
         if let layout = PostcollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.estimatedItemSize = CGSize(width: 167, height: 87)
         }
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let post1 = posts[indexPath.item]
+        
+        // DetailViewController를 생성합니다.
+        if let detailViewController = UIStoryboard(name: "Mypage", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            // 선택한 게시물을 DetailViewController에 전달합니다.
+            detailViewController.post1 = post1
+            navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
+
     
     func setupFirebase() {
         db = Firestore.firestore()
@@ -78,6 +89,50 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
         loadCurrentUserProfile()
     }
     
+    
+      func loadUserPosts() {
+          if let uid = auth.currentUser?.uid {
+              let postsRef = db.collection("posts").document(uid).collection("posts")
+              postsRef.getDocuments { (querySnapshot, error) in
+                  if let error = error {
+                      print("Error fetching posts: \(error.localizedDescription)")
+                      return
+                  }
+
+                  guard let documents = querySnapshot?.documents else {
+                      print("No documents found")
+                      return
+                  }
+
+                  self.posts = documents.compactMap { document in
+                      return userPost(data: document.data())
+                  }
+
+                  // 게시물 데이터를 가져온 후 콜렉션 뷰를 리로드
+                  self.PostcollectionView.reloadData()
+              }
+          }
+      }
+
+    func loadImage(for cell: PostCollectionViewCell, at indexPath: IndexPath) {
+        let post = posts[indexPath.item]
+        if let imageUrl = post.imageUrl, let url = URL(string: imageUrl) {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Error downloading image: \(error)")
+                    return
+                }
+
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        cell.post.image = image
+                    }
+                }
+            }.resume()
+        }
+    }
+
+
     func loadCurrentUserProfile() {
         if let uid = auth.currentUser?.uid {
             let userProfileRef = db.collection("userProfiles").document(uid)
@@ -98,6 +153,9 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
                                 if let data = data, let image = UIImage(data: data) {
                                     DispatchQueue.main.async {
                                         self.ProfileImageView.image = image
+                                        
+                                        
+                
                                     }
                                 }
                             }.resume()
@@ -116,6 +174,7 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
         if let currentUserProfile = currentUserProfile {
             UsernameTextField.text = currentUserProfile.username
             BioTextField.text = currentUserProfile.bio
+          
         }
     }
     
@@ -127,7 +186,7 @@ class TitleViewController: UIViewController, UICollectionViewDelegate {
         // Change the collection view layout to the default two-by-two layout
         PostcollectionView.collectionViewLayout = createCompositionalLayoutForTwoByTwo()
     }
-
+    
     @IBAction func default2FlowBtnTapped(_ sender: UIButton) {
         // Change the collection view layout to the smaller cell size layout
         PostcollectionView.collectionViewLayout = createCompositionalLayoutForSmallerCells()
@@ -154,8 +213,6 @@ extension TitleViewController {
         }
         return layout
     }
-
-    
     
     fileprivate func createCompositionalLayoutForSmallerCells() -> UICollectionViewLayout {
         // This layout is for smaller cells (350x150)
@@ -179,30 +236,45 @@ extension TitleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.posts.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // PostCell 식별자로 셀을 로드
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath)
 
-        // 데이터를 가져오거나 필요한 내용으로 셀을 업데이트합니다.
-        let post1 = posts[indexPath.item]
-        // PostCollectionViewCell의 서브뷰를 가져오거나 업데이트합니다.
+        let post = posts[indexPath.item]
+        
         if let postCell = cell as? PostCollectionViewCell {
-            postCell.post.image = post1.image
+            if let imageUrl = post.imageUrl, let url = URL(string: imageUrl) {
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    if let error = error {
+                        print("Error downloading image: \(error)")
+                        return
+                    }
+
+                    if let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            postCell.post.image = image // 이미지 업데이트
+                            // 다른 UI 업데이트 작업을 수행할 수 있습니다.
+                        }
+                    }
+                }.resume()
+            }
         }
 
         return cell
     }
+
 }
 
 extension TitleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.collectionViewLayout == createCompositionalLayoutForTwoByTwo() {
-            return CGSize(width: 167, height: 87)
+            return CGSize(width: 200 , height: 150)
         } else if collectionView.collectionViewLayout == createCompositionalLayoutForSmallerCells() {
             return CGSize(width: 350, height: 150)
         } else {
-            return CGSize(width: 167, height: 87) // Default size
+            return CGSize(width: 300, height: 150) // Default size
         }
     }
 }
+
+
+

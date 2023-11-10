@@ -20,7 +20,11 @@ class LoginViewController: UIViewController {
         
         passwordTextField.isSecureTextEntry = true
         
-        
+        let logoImageView = UIImageView(image: UIImage(named: "PurplePillow"))
+        logoImageView.contentMode = .scaleAspectFit // 이미지가 크기에 맞게 비율 유지하도록 설정
+        logoImageView.frame = CGRect(x: 0, y: 0, width: logoImageView.image?.size.width ?? 0, height: logoImageView.image?.size.height ?? 0)
+        logoImageView.transform = CGAffineTransform(scaleX: 0.85, y: 0.7) // 이미지 크기를 0.5배로 축소
+        navigationItem.titleView = logoImageView
         
     }
     

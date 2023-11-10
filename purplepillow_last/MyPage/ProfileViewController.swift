@@ -117,49 +117,62 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         
-        var data: [String: Any] = [
-            "username": username,
-            "bio": bio
+        // Load the existing user profile data
+        if var currentUserProfile = currentUserProfile {
+            // Preserve the existing UserProfile data
+            currentUserProfile.username = username
+            currentUserProfile.bio = bio
+            
+            if let image = profileImg.image, let imageData = image.jpegData(compressionQuality: 0.7) {
+                let imageName = "\(uid)_profile_image.jpg"
+                let storageRef = storage.reference().child("profile_images/\(imageName)")
+                
+                storageRef.putData(imageData, metadata: nil) { metadata, error in
+                    if let error = error {
+                        print("Error uploading profile image: \(error)")
+                        return
+                    }
+                    
+                    storageRef.downloadURL { url, error in
+                        if let downloadURL = url {
+                            currentUserProfile.imageUrl = downloadURL.absoluteString
+                            
+                            // Update the user profile
+                            self.updateUserProfile(uid: uid, userProfile: currentUserProfile)
+                        }
+                    }
+                }
+            } else {
+                // Update the user profile without changing the image
+                self.updateUserProfile(uid: uid, userProfile: currentUserProfile)
+            }
+        }
+    }
+
+    func updateUserProfile(uid: String, userProfile: UserProfile) {
+        // Convert the UserProfile object to a dictionary
+        let userProfileData: [String: Any] = [
+            "username": userProfile.username,
+            "bio": userProfile.bio,
+            "imageUrl": userProfile.imageUrl
             // Add more fields as needed
         ]
         
-        if let image = profileImg.image, let imageData = image.jpegData(compressionQuality: 0.7) {
-            let imageName = "\(uid)_profile_image.jpg"
-            let storageRef = storage.reference().child("profile_images/\(imageName)")
-            
-            storageRef.putData(imageData, metadata: nil) { metadata, error in
-                if let error = error {
-                    print("Error uploading profile image: \(error)")
-                    return
-                }
-                
-                storageRef.downloadURL { url, error in
-                    if let downloadURL = url {
-                        data["imageUrl"] = downloadURL.absoluteString
-                        self.updateUserProfile(uid: uid, data: data)
-                    }
-                }
-            }
-        } else {
-            self.updateUserProfile(uid: uid, data: data)
-        }
-    }
-    
-    func updateUserProfile(uid: String, data: [String: Any]) {
+        // Update the user profile document
         let userProfileRef = db.collection("userProfiles").document(uid)
         
-        userProfileRef.setData(data) { error in
+        userProfileRef.setData(userProfileData, merge: true) { error in
             if let error = error {
                 print("Error saving user profile: \(error)")
             } else {
                 print("User profile saved successfully")
-                self.navigationController?.popViewController(animated: true) // Go back to previous screen
+                self.navigationController?.popViewController(animated: true) // Go back to the previous screen
             }
             // Hide loading indicator
             self.hideLoadingIndicator()
         }
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
             profileImg.image = pickedImage

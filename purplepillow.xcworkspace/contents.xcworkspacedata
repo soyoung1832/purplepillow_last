@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:../2022_unity_last/Unity-iPhone.xcodeproj">
+      location = "group:../purplepillow_unity_BurstDebugInformation_DoNotShip/k/Unity-iPhone.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:purplepillow_last.xcodeproj">
