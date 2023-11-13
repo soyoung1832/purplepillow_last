@@ -11,7 +11,6 @@ class Post2CollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var post: UIImageView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         addShadow()
